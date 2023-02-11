@@ -15,11 +15,12 @@ class Program
 
 
         // read username and password from keyboard
-        Console.WriteLine("Username:");
+        Console.WriteLine("Username: ");
         username = Console.ReadLine();
 
         if (!string.IsNullOrEmpty(username))
         {
+            Console.WriteLine("Password: ");
             password = Console.ReadLine();
         }
 
@@ -46,9 +47,11 @@ class Program
                 // switch-case to check menu choice
                 switch (mainMenuChoice)
                 {
-                    case 1: // Todo: show customer menu
+                    case 1:
+                        CustomersMenu();
                         break;
-                    case 2: // Todo: show account menu
+                    case 2:
+                        AccountMenu();
                         break;
                     case 3: //Todo: show fund transfer menu
                         break;
@@ -59,7 +62,7 @@ class Program
                     case 0: // Todo : exit
                         break;
                     default:
-                        Console.WriteLine("");
+                        Console.WriteLine("Wrong Choice");
                         break;
                 }
             } while (mainMenuChoice != 0);
@@ -71,5 +74,67 @@ class Program
         }
 
         Console.WriteLine("Thank You. Visit Again.");
+    }
+
+    /// <summary>
+    /// This method is for Customer Menu
+    /// </summary>
+    static void CustomersMenu()
+    {
+        // declare a variable for choice
+        int customersMenuChoice = -1;
+
+        do
+        {
+
+            Console.WriteLine("\n::Customers Menu::");
+            Console.WriteLine("1. Add Customer");
+            Console.WriteLine("2. Update Customer");
+            Console.WriteLine("3. Delete Customer");
+            Console.WriteLine("4. View Customer");
+            Console.WriteLine("0. Back to main menu");
+
+            Console.WriteLine("Enter Choice : ");
+            customersMenuChoice = int.Parse(Console.ReadLine());
+
+            switch (customersMenuChoice)
+            {
+                case 1: // Todo: add the customer
+                    break;
+                case 2: // Todo: update the customer
+                    break;
+                case 3: //Todo: delete the customer
+                    break;
+                case 4: //Todo: view customer
+                    break;
+
+            }
+
+        } while (customersMenuChoice != 0);
+    }
+
+    static void AccountMenu()
+    {
+        Console.WriteLine("\n::Account Menu::");
+        int accountMenuChoice = -1;
+
+        do
+        {
+            Console.WriteLine("1. Add Account");
+            Console.WriteLine("2. Update Account");
+            Console.WriteLine("3. Delete Account");
+            Console.WriteLine("4. View Account");
+            Console.WriteLine("0. Back to main menu");
+
+
+            Console.WriteLine("Enter choice : ");
+            accountMenuChoice = int.Parse(Console.ReadLine());
+
+            switch (accountMenuChoice)
+            {
+
+            }
+
+        } while (accountMenuChoice != 0);
     }
 }
